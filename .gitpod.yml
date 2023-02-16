@@ -1,35 +1,13 @@
-
-#vscode:
-  #extensions:
-    #- 42Crunch.vscode-openapi
-
-    # .gitpod.yml
-
-# Specify the Docker image to use for the workspace
-image:
-  file: .gitpod.dockerfile
-
-# Specify the ports to expose to the browser
-ports:
-  - port: 3000
-    onOpen: open-preview
-
-# Specify the prebuilds to use
-# prebuilds:
-#   - image: my-image
-
-# Specify the VS Code extensions to install
+tasks:
+  - name: aws-cli
+    env:
+      AWS_CLI_AUTO_PROMPT: on-partial
+    init: |
+      cd /workspace
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      sudo ./aws/install
+      cd $THEIA_WORKSPACE_ROOT
 vscode:
   extensions:
-    - dbaeumer.vscode-eslint
-    - ms-python.python
-
-# Specify the scripts to run when the workspace starts
-tasks:
-  - name: Start the app
-    command: npm start
-
-# Specify the environment variables to set
-# env:
-#   MY_VAR: my-value
-#testing
+    - 42Crunch.vscode-openapi
