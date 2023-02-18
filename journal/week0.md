@@ -16,7 +16,7 @@
 
 4. Kindly find below an image of my conceptual diagram in a napkin. <br>
 ![napkin](../_docs/assets/aws-img-wk0/lucid-chart.png)
-* To view on the lucid app, click [HERE](https://lucid.app/lucidchart/2db6558a-feed-41e8-b453-1188782c2c78/edit?viewport_loc=-122%2C192%2C2380%2C1022%2C0_0&invitationId=inv_06a8a74a-bcfc-4157-86d1-9f33763ab1df) <br><br><br>
+* To view on the lucid app, click [HERE](https://lucid.app/lucidchart/4e69d912-85e0-4f42-9f62-7763c0e6f8be/edit?viewport_loc=104%2C-73%2C2348%2C940%2C0_0&invitationId=inv_658a9e00-e396-4cf9-a9f1-0494424f80e8) <br><br><br>
 
 
 5. An IAM role role, and the root account credentials was destroyed <br>
