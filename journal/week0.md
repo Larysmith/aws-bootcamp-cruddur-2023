@@ -2,8 +2,7 @@
 ## Tasks completed for week 0
 ***
 ### Home-work hard assignment 
-1. Successfully created an admin user
-![img](../_docs/assets/img0/user_creation01.png)
+
 
 5. Succesfully used my aws cloudshell 
 ![img](../_docs/assets/aws-img-wk0/aws-cli.png)
