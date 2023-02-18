@@ -18,7 +18,7 @@
 ![img](../_docs/assets/aws-img-wk0/create-budget.png)
 
 5. Installed aws cli
-![img](../_docs/assets/img0/aws%20cli.png)
+![img](../_docs/assets/aws-img-wk0/aws-cli-inst.png)
 
 4. Kindly find below an image of my conceptual diagram in a napkin. 
 ![napkin](../_docs/assets/aws-img-wk0/lucid-chart.png)
