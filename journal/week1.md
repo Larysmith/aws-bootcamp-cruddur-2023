@@ -44,7 +44,6 @@
     ```sh
         docker build -t  frontend-react-js .
     ```
-    ![img](/_docs/assets/img1/build-frontend-container.png)
     * Run the container
     ```sh
         docker run -p 3000:3000 -d frontend-react-js
