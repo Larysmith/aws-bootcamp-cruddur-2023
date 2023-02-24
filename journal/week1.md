@@ -1,6 +1,6 @@
 # Week 1 — App Containerization
 
-# Week 1 — App Containerization
+
 # **TASKS COMPLETED FOR WEEK 1**
 
 1. CHECKLIST ASSIGNMENT
@@ -20,7 +20,6 @@
     ```sh
         docker build -t  backend-flask .
     ```
-    ![img](/_docs/assets/img1/built%20backend%20image.png)
     * Run the container
     ```sh
         docker run --rm -p 4567:4567 -it -e FRONTEND_URL='*' -e BACKEND_URL='*' backend-flask
