@@ -173,7 +173,6 @@ Step5: Get Records
 ```
 aws dynamodb scan --table-name cruddur_cruds --query "Items" --endpoint-url http://localhost:8000
 ```
-![img](/img1/dynamo%20db%20terminal%20verified.png)
 
 ### 6. **RUN POSTGRES CONTAINER AND ENSURE IT WORKS**
 Step1:Lets integrate the following into our existing docker compose file;
