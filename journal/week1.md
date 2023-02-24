@@ -28,7 +28,7 @@
     ![img](/img-wk-2/Build%20containers.png)
 
     * Verify the backend is running on the port in the browser
-    ![img](/img-wk-2/Docker%20backend%20run.png)
+    ![img](_docs/assets/img-wk-2/Docker%20backend%20run.png)
 
     * Check the backend image ruuning
     ```sh
