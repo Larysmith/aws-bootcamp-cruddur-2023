@@ -25,7 +25,7 @@
     ```sh
         docker run --rm -p 4567:4567 -it -e FRONTEND_URL='*' -e BACKEND_URL='*' backend-flask
     ```
-    ![img](/img-wk-2/Build%20containers.png)
+    ![img](../img-wk-2/Build%20containers.png)
 
     * Verify the backend is running on the port in the browser
     ![img](/_docs/assets/img-wk-2/Docker%20backend%20run.png)
