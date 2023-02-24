@@ -49,7 +49,7 @@
     ```sh
         docker run -p 3000:3000 -d frontend-react-js
     ```
-    ![img](/img1/running%20frontend.png)
+    
     * Verify the frontend is running on the port in the browser
     ![img](/_docs/assets/img-wk-2/frontend%20homepage.png)
 
@@ -60,7 +60,7 @@
         docker compose up -d
     ```
 * Verify that the multiple containers are up and running from your browser;
-![img](/img1/signed%20in%20to%20the%20cruddr.png)
+
 
 ### 2. **DOCUMENT THE NOTIFICATION ENDPOINT**
 Add an endpoint for the notification tab in the [openapi-3.0.yml](../backend-flask/openapi-3.0.yml) file
@@ -98,8 +98,7 @@ from services.notifications_activities import *
 ```
 Step2: Create the [notifications_activities](../backend-flask/services/notifications_activities.py) file.
 
-Step3: Verify from the browser
-![img](/img1/notification%20web%20browser.png)
+
 
 ### 4. **WRITE A REACT PAGE FOR NOTIFICATIONS**
 Step1: Update the [App.js](../frontend-react-js/src/App.js) with the following codes
