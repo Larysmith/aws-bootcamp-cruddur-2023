@@ -85,7 +85,7 @@ Add an endpoint for the notification tab in the [openapi-3.0.yml](../backend-fla
 
 
 ### 3. **WRITE A FLASK ENDPOINT FOR NOTIFICATION**
-Step1: Update the  [app.py](../backend-flask/app.py) with the following codes
+Step1 : Update the  [app.py](../backend-flask/app.py) with the following codes
 ```sh
     @app.route("/api/activities/notifications", methods=['GET'])
 def data_notifications():
@@ -100,7 +100,7 @@ Step2: Create the [notifications_activities](../backend-flask/services/notificat
 
 
 ### 4. **WRITE A REACT PAGE FOR NOTIFICATIONS**
-Step1: Update the [App.js](../frontend-react-js/src/App.js) with the following codes
+Step1 : Update the [App.js](../frontend-react-js/src/App.js) with the following codes
 ```sh
     path: "/notifications",
     element: <NotificationsFeedPage />
@@ -110,7 +110,7 @@ Step1: Update the [App.js](../frontend-react-js/src/App.js) with the following c
 import NotificationsFeedPage from './pages/NotificationsFeedPage.js';
 ```
 
-Step2: Create and the following files;
+Step2 : Create and the following files;
 * [NotificationsFeedPage.css](../frontend-react-js/src/pages/NotificationsFeedPage.css)
 * [NotificationsFeedPage.js](../frontend-react-js/src/pages/NotificationsFeedPage.js)
 
@@ -140,7 +140,7 @@ Volumes;
     volumes: 
         - "./docker/dynamodb:/home/dynamodblocal/data"
 ```
-STEP2: Create a table
+STEP2 : Create a table
 ```sh
 aws dynamodb create-table \
     --endpoint-url http://localhost:8000 \
@@ -153,7 +153,7 @@ aws dynamodb create-table \
     --table-class STANDARD
 
 ```
-Step3: Create an item
+Step3 : Create an item
 ```sh
 aws dynamodb put-item \
     --endpoint-url http://localhost:8000 \
@@ -164,12 +164,12 @@ aws dynamodb put-item \
 ```
 ![img](/_docs/assets/img-wk-2/db%20items.png)
 
-Step4: List Records
+Step4 : List Records
 ```sh
 aws dynamodb list-tables --endpoint-url http://localhost:8000
 ```
 ![img](/_docs/assets/img-wk-2/db%20tables.png)
-Step5: Get Records
+Step5 : Get Records
 ```
 aws dynamodb scan --table-name cruddur_cruds --query "Items" --endpoint-url http://localhost:8000
 ```
@@ -193,7 +193,7 @@ volumes:
     driver: local
 
 ```
-Step2: To install the postgres client into Gitpod
+Step2 : To install the postgres client into Gitpod
 ```sh
   - name: postgres
     init: |
@@ -204,7 +204,7 @@ Step2: To install the postgres client into Gitpod
 
 ```
 
-step3: Volumes
+step3 : Volumes
 ```sh
 volumes: 
   - db:/var/lib/postgresql/data
@@ -214,7 +214,7 @@ volumes:
     driver: local
 ```
 
-Step4: Verify that postgres is well integrated
+Step4 : Verify that postgres is well integrated
  ![img](/_docs/assets/img-wk-2/postgress%20terminal.png)
 ## **HOMEWORK CHALLENGE**
 1. Run the dockerfile CMD as an external script
@@ -271,7 +271,7 @@ EXPOSE ${PORT}
 CMD ["/bin/bash", "start.sh"]
 
 ```
-Step3: Then build the images and run the containers.
+Step3 : Then build the images and run the containers.
 ```sh
     docker compose up
 ```
@@ -329,7 +329,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 ```
-Step2: Verify docker installation
+Step2 : Verify docker installation
 ![img](../img1/docker-localmachine%20installed.png)
 
 Step3: Run the container
@@ -348,7 +348,7 @@ sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 sudo usermod -aG docker ubuntu
 
 ```
-Step2: Pull a container then run it.
+Step2 : Pull a container then run it.
 ![Alt text](../img1/pull%20docker%20image.png)
 
 ***Thank you!!! See you next week.***
