@@ -114,7 +114,7 @@ Step2 : Create and the following files;
 * [NotificationsFeedPage.css](../frontend-react-js/src/pages/NotificationsFeedPage.css)
 * [NotificationsFeedPage.js](../frontend-react-js/src/pages/NotificationsFeedPage.js)
 
-Step 3: Verify from the browser
+Step3 : Verify from the browser
 ![img](/_docs/assets/img-wk-2/notification%20frontend.png)
 
 ### 5. **RUN DYNAMODB ON THE LOCAL CONTAINER AND ENSURE IT WORKS**
@@ -225,7 +225,7 @@ Step4 : Verify that postgres is well integrated
 6. Installed Docker on my localmachine and got the same containers running.
 7. Launch an EC2 instance that has docker installed, and pull a container
 ### 1. **RUN THE DOCKERFILE CMD AS AN EXTERNAL SCRIPT**
-Step1: 
+Step1 : 
 Backend
 * Create a start.sh file
 ```sh
@@ -250,7 +250,7 @@ EXPOSE ${PORT}
 CMD [ "sh", "start.sh" ]
 
 ```
-Step2: Frontend
+Step2 : Frontend
 * Create a `start.sh` file
 ```sh
 #!/bin/bash
