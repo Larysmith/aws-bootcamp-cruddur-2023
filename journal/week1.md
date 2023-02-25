@@ -86,7 +86,7 @@ Add an endpoint for the notification tab in the [openapi-3.0.yml](../backend-fla
 
 ### 3. **WRITE A FLASK ENDPOINT FOR NOTIFICATION**
     * Update the  [app.py](../backend-flask/app.py) with the following codes
-      ```sh
+      
           @app.route("/api/activities/notifications", methods=['GET'])
       def data_notifications():
         data = NotificationsActivities.run()
