@@ -85,17 +85,17 @@ Add an endpoint for the notification tab in the [openapi-3.0.yml](../backend-fla
 
 
 ### 3. **WRITE A FLASK ENDPOINT FOR NOTIFICATION**
-    * Update the  [app.py](../backend-flask/app.py) with the following codes
-      
-          @app.route("/api/activities/notifications", methods=['GET'])
-      def data_notifications():
-        data = NotificationsActivities.run()
-        return data, 200
-      ```
-      ```sh
-      from services.notifications_activities import *
-      ```
-   * Create the [notifications_activities](../backend-flask/services/notifications_activities.py) file.
+Step1 : Update the  [app.py](../backend-flask/app.py) with the following codes
+```sh
+    @app.route("/api/activities/notifications", methods=['GET'])
+def data_notifications():
+  data = NotificationsActivities.run()
+  return data, 200
+```
+```sh
+from services.notifications_activities import *
+```
+Step2 : Create the [notifications_activities](../backend-flask/services/notifications_activities.py) file.
 
 
 
@@ -118,7 +118,7 @@ Step3 : Verify from the browser
 ![img](/_docs/assets/img-wk-2/notification%20frontend.png)
 
 ### 5. **RUN DYNAMODB ON THE LOCAL CONTAINER AND ENSURE IT WORKS**
-Step1: Lets integrate the following into our existing docker compose file
+Step1 : Lets integrate the following into our existing docker compose file
 ```sh
 services:
   dynamodb-local:
@@ -140,7 +140,7 @@ Volumes;
     volumes: 
         - "./docker/dynamodb:/home/dynamodblocal/data"
 ```
-STEP2 : Create a table
+Step2 : Create a table
 ```sh
 aws dynamodb create-table \
     --endpoint-url http://localhost:8000 \
@@ -175,7 +175,7 @@ aws dynamodb scan --table-name cruddur_cruds --query "Items" --endpoint-url http
 ```
 
 ### 6. **RUN POSTGRES CONTAINER AND ENSURE IT WORKS**
-Step1:Lets integrate the following into our existing docker compose file;
+Step1 : Lets integrate the following into our existing docker compose file;
 ```sh
 services:
   db:
