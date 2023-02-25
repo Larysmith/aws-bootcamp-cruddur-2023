@@ -13,7 +13,7 @@
 5.  Run DynamoDB Local Container and ensure it works
 6.  Run Postgres Container and ensure it works
 ### 1. **CONTAINERIZE THE APPLICATION** 
-1. BACKEND
+I. BACKEND
     * Add the [Backend Dockerfile](../backend-flask/Dockerfile) in the `./backend-flask` directory.
 
        * Build the container 
@@ -35,7 +35,7 @@
     ```
     ![img](/_docs/assets/img-wk-2/docker%20images.png)
 
- 2. FRONTEND
+ II. FRONTEND
     * Add the [Frontend Dockerfile](../frontend-react-js/Dockerfile) in the `./frontend-react-js` directory.
 
     * Run `npm i` in the directory above then build the container
@@ -52,7 +52,7 @@
     * Verify the frontend is running on the port in the browser
     ![img](/_docs/assets/img-wk-2/sign%20in%20page.png)
 
-3. MULTIPLE CONTAINERS
+III. MULTIPLE CONTAINERS
 * Create a [docker-compose.yml](../docker-compose.yml) at the project root directory
 * Run the compose file
     ```sh
