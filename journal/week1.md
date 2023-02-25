@@ -13,7 +13,7 @@
 5.  Run DynamoDB Local Container and ensure it works
 6.  Run Postgres Container and ensure it works
 ### 1. **CONTAINERIZE THE APPLICATION** 
-I. BACKEND
+1. BACKEND
     * Add the [Backend Dockerfile](../backend-flask/Dockerfile) in the `./backend-flask` directory.
 
        * Build the container 
@@ -35,7 +35,7 @@ I. BACKEND
     ```
     ![img](/_docs/assets/img-wk-2/docker%20images.png)
 
- II. FRONTEND
+ 2. FRONTEND
     * Add the [Frontend Dockerfile](../frontend-react-js/Dockerfile) in the `./frontend-react-js` directory.
 
     * Run `npm i` in the directory above then build the container
@@ -52,14 +52,14 @@ I. BACKEND
     * Verify the frontend is running on the port in the browser
     ![img](/_docs/assets/img-wk-2/sign%20in%20page.png)
 
-III. MULTIPLE CONTAINERS
-* Create a [docker-compose.yml](../docker-compose.yml) at the project root directory
-* Run the compose file
-    ```sh
-        docker compose up -d
-    ```
-* Verify that the multiple containers are up and running from your browser;
-    ![img](/_docs/assets/img-wk-2/frontend%20homepage.png)
+3. MULTIPLE CONTAINERS
+   * Create a [docker-compose.yml](../docker-compose.yml) at the project root directory
+   * Run the compose file
+       ```sh
+           docker compose up -d
+       ```
+   * Verify that the multiple containers are up and running from your browser;
+       ![img](/_docs/assets/img-wk-2/frontend%20homepage.png)
 
 ### 2. **DOCUMENT THE NOTIFICATION ENDPOINT**
 Add an endpoint for the notification tab in the [openapi-3.0.yml](../backend-flask/openapi-3.0.yml) file
