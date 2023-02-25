@@ -50,7 +50,7 @@
     ```
     
     * Verify the frontend is running on the port in the browser
-    ![img](/_docs/assets/img-wk-2/frontend%20homepage.png)
+    ![img](/_docs/assets/img-wk-2/sign%20in%20page.png)
 
 3. MULTIPLE CONTAINERS
 * Create a [docker-compose.yml](../docker-compose.yml) at the project root directory
@@ -59,7 +59,7 @@
         docker compose up -d
     ```
 * Verify that the multiple containers are up and running from your browser;
-
+    ![img](/_docs/assets/img-wk-2/frontend%20homepage.png)
 
 ### 2. **DOCUMENT THE NOTIFICATION ENDPOINT**
 Add an endpoint for the notification tab in the [openapi-3.0.yml](../backend-flask/openapi-3.0.yml) file
