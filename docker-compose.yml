@@ -60,7 +60,7 @@ services:
   #   volumes: 
   #     - db:/var/lib/postgresql/data
 
-# the name flag is a hack to change the default prepend folder
+# the name flag is a hack to change the default prepend folders
 # name when outputting the image names
 networks: 
   internal-network:
