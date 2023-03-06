@@ -47,7 +47,8 @@ trace.set_tracer_provider(provider)
 tracer = trace.get_tracer(__name__)
 ```
 ```sh
-# Below is the code to initialize automatic instrumentation with Flask
+
+#Below is the code to initialize automatic instrumentation with Flask
 app = Flask(__name__)
 FlaskInstrumentor().instrument_app(app)
 RequestsInstrumentor().instrument()
