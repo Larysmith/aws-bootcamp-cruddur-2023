@@ -60,8 +60,8 @@ tracer = trace.get_tracer(__name__)
 
 
 # X-RAY ...........
-#xray_url = os.getenv("AWS_XRAY_URL")
-#xray_recorder.configure(service='Cruddur', dynamic_naming=xray_url)
+xray_url = os.getenv("AWS_XRAY_URL")
+xray_recorder.configure(service='Cruddur', dynamic_naming=xray_url)
 #XRayMiddleware(app, xray_recorder)
 
 
@@ -69,7 +69,7 @@ tracer = trace.get_tracer(__name__)
 app = Flask(__name__)
 
 # X-RAY .......
-#XRayMiddleware(app, xray_recorder)
+XRayMiddleware(app, xray_recorder)
 
 
 # Honeycomb ............
