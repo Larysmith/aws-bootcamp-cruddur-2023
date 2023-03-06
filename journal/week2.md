@@ -8,13 +8,11 @@
 6. Integrate Rollbar for Error Logging
 7. Trigger an error an observe an error with Rollbar
 8. Install WatchTower and write a custom logger to send application log data to CloudWatch Log group
-# HOMEWORK CHALLENGE
-1. Add custom instrumentation to Honeycomb to add more attributes eg. UserId, Add a custom span
-2. Run custom queries in Honeycomb and save them later eg. Latency by UserID, Recent Traces
+
 
 # Technical/To-Do Tasks
 
-### 1. INSTRUMENT OUR BACKEND FLASK APPLICATION TO USE OPEN TELEMETRY (OTEL) WITH HONEYCOMB.IO AS THE PROVIDER
+### 1. I INSTRUMENTED MY BACKEND FLASK APPLICATION TO USE OPEN TELEMETRY (OTEL) WITH HONEYCOMB.IO AS THE PROVIDER
 
 Step1: add the following files to our requirements.txt
 ```sh
@@ -40,7 +38,7 @@ from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 ```
 ```sh
-# Initialize tracing and an exporter that can send data to Honeycomb
+# Below is the code to initialize tracing and an exporter that can send data to Honeycomb
 provider = TracerProvider()
 processor = BatchSpanProcessor(OTLPSpanExporter())
 provider.add_span_processor(processor)
@@ -48,7 +46,7 @@ trace.set_tracer_provider(provider)
 tracer = trace.get_tracer(__name__)
 ```
 ```sh
-# Initialize automatic instrumentation with Flask
+# Below is the code to initialize automatic instrumentation with Flask
 app = Flask(__name__)
 FlaskInstrumentor().instrument_app(app)
 RequestsInstrumentor().instrument()
@@ -69,12 +67,12 @@ gp env HONEYCOMB_SERVICE_NAME="backend-flask"
 Step5: Verify
 ![img](../img2/honeycomb%20web%20.png)
 
-### 2. RUN QUERIES TO EXPLORE TRACES WITHIN HONEYCOMB.IO
+### 2. I RAN QUERIES TO EXPLORE TRACES WITHIN HONEYCOMB.IO
 App.now query
 ![img](../img2/app.now%20query.png)
 
 
-### 3. INSTRUMENT AWS X-RAY INTO BACKEND FLASK APPLICATION
+### 3. I INSTRUMENTED AWS X-RAY INTO MY BACKEND FLASK APPLICATION
 Step1: Add to the requirements.txt
 ```sh
 aws-xray-sdk
@@ -129,7 +127,7 @@ aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
 ```
 ![img](../img/../img2/sampling%20rule%20created.png)
 
-### 4. CONFIGURE AND PROVISION X-RAY DAEMON WITHIN DOCKER-COMPOSE AND SEND DATA BACK TO X-RAY API
+### 4. I CONFIGURED AND PROVISION X-RAY DAEMON WITHIN DOCKER-COMPOSE AND I SENT DATA BACK TO X-RAY API
 
 Step1: Add daemon service to the docker compose 
 ```sh
@@ -153,10 +151,10 @@ Step2: Add these two env vars to our backend-flask in our docker-compose.yml fil
       AWS_XRAY_DAEMON_ADDRESS: "xray-daemon:2000"
 ```
 
-### 5. OBSERVE X-RAY TRACES WITHIN THE AWS CONSOLE
+### 5. I OBSERVED X-RAY TRACES WITHIN THE AWS CONSOLE
 ![img](../img2/xray%20successfully%20instrumented.png)
 
-### 6. INTEGRATE ROLLBAR FOR ERROR LOGGING
+### 6. I INTEGRATED ROLLBAR FOR ERROR LOGGING
 Step1: Add to requirements.txt
 ```sh
 blinker
@@ -219,11 +217,11 @@ def rollbar_test():
 Step7: Verify
 ![img](../img2/roolbar%20app%20confirm.png)
 
-### 7. TRIGGER AN ERROR AN OBSERVE AN ERROR WITH ROLLBAR
+### 7. I TRIGGERD AN ERROR AND OBSERVED AN ERROR WITH ROLLBAR
 
 ![img](../img/../img2/roolbar%20error.png)
 
-### 8. INSTALL WATCHTOWER AND WRITE A CUSTOM LOGGER TO SEND APPLICATION LOG DATA TO CLOUDWATCH LOG GROUP
+### 8. I INSTALLED WATCHTOWER AND WROTE A CUSTOM LOGGER TO SEND APPLICATION LOG DATA TO CLOUDWATCH LOG GROUP
 
 Step1: Add to the requirements.txt
 ```sh
@@ -275,21 +273,4 @@ Step6: Verify
 ![img](../img2/cloudwatch%20log1.png)
 ![img](../img2/cloudwatch2.png)
 
-# HOMEWORK CHALLENGE
-### 1. ADD CUSTOM INSTRUMENTATION TO HONEYCOMB TO ADD MORE ATTRIBUTES EG. USERID, ADD A CUSTOM SPAN.
-* Added a custom span to the Homeactivities and Notificationactivities
-  * Homeactivities
-![img](../img2/home%20span.png)
-![img](../img2/home%20span%202.png)
-  * Notificationactivities
-![img](../img2/notification%20span.png)
-![img](../img2/notification%202.png)
 
-
-### 2. RUN CUSTOM QUERIES IN HONEYCOMB AND SAVE THEM LATER EG. LATENCY BY USERID, RECENT TRACES
-* Trace id
-  ![img](../img2/trace.id%20attribute.png)
-* Last 10 minutes
-  ![img](../img2/last%2010%20minutes.png)
-
-***Thank you and see you next week!!!!***
