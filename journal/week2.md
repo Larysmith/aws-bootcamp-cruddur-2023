@@ -154,7 +154,7 @@ Step2: Add these two env vars to our backend-flask in our docker-compose.yml fil
 ```
 
 ### 5. I OBSERVED X-RAY TRACES WITHIN THE AWS CONSOLE
-![img](../img2/xray%20successfully%20instrumented.png)
+![img](../_docs/assets/imgwk3/xraytraces.png)
 
 ### 6. I INTEGRATED ROLLBAR FOR ERROR LOGGING
 Step1: Add to requirements.txt
@@ -272,7 +272,7 @@ Step5: Set the env var in your backend-flask for docker-compose.yml
 ```
 
 Step6: Verify
-![img](../img2/cloudwatch%20log1.png)
-![img](../img2/cloudwatch2.png)
+![img](.._docs/assets/imgwk3/cloudwatchloggroups.png)
+![img](../_docs/assets/imgwk3/cloudwatchlogs.png)
 
 
