@@ -71,7 +71,7 @@ Step5: Verify
 
 ### 2. I RAN QUERIES TO EXPLORE TRACES WITHIN HONEYCOMB.IO
 App.now query
-![img](../img2/app.now%20query.png)
+![img](../imgwk3/honeycombactivities.png)
 
 
 ### 3. I INSTRUMENTED AWS X-RAY INTO MY BACKEND FLASK APPLICATION
@@ -121,13 +121,13 @@ aws xray create-group \
    --group-name "Cruddur" \
    --filter-expression "service(\"backend-flask\")"
 ```
-![img](../img2/cruddr%20xray%20group%20verf.%20console%20.png)
+![img](../_docs/assets/imgwk3/x-raytracesgroup.png)
 
 Step6: Create a sampling rule
 ```sh
 aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
 ```
-![img](../img/../img2/sampling%20rule%20created.png)
+![img](../_docs/assets/imgwk3/x-raysampling.png)
 
 ### 4. I CONFIGURED AND PROVISION X-RAY DAEMON WITHIN DOCKER-COMPOSE AND I SENT DATA BACK TO X-RAY API
 
