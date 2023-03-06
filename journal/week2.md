@@ -67,7 +67,7 @@ gp env HONEYCOMB_API_KEY=""
 gp env HONEYCOMB_SERVICE_NAME="backend-flask"
 ```
 Step5: Verify
-![img](../img2/honeycomb%20web%20.png)
+![img](../imgwk3/honeycomb.png)
 
 ### 2. I RAN QUERIES TO EXPLORE TRACES WITHIN HONEYCOMB.IO
 App.now query
