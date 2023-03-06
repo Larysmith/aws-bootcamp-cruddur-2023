@@ -272,7 +272,7 @@ Step5: Set the env var in your backend-flask for docker-compose.yml
 ```
 
 Step6: Verify
-![img](.._docs/assets/imgwk3/cloudwatchloggroups.png)
+![img](../_docs/assets/imgwk3/cloudwatchloggroups.png)
 ![img](../_docs/assets/imgwk3/cloudwatchlogs.png)
 
 
