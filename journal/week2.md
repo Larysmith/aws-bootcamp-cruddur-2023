@@ -38,7 +38,7 @@ from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 ```
 
-<h3>Below is the code to initialize tracing and an exporter that can send data to Honeycomb</h3>
+<h4>Below is the code to initialize tracing and an exporter that can send data to Honeycomb</h4>
 
 ```sh
 provider = TracerProvider()
