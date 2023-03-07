@@ -14,7 +14,7 @@
 
 ### 1. I INSTRUMENTED MY BACKEND FLASK APPLICATION TO USE OPEN TELEMETRY (OTEL) WITH HONEYCOMB.IO AS THE PROVIDER
 
-Step1: add the following files to our requirements.txt
+**Step1: add the following files to our requirements.txt**
 ```sh
 opentelemetry-api 
 opentelemetry-sdk 
@@ -24,7 +24,7 @@ opentelemetry-instrumentation-requests
 
 ```
 
-Step2: Install dependencies
+**Step2: Install dependencies**
 ```sh
 pip install -r requirements.txt
 ```
@@ -47,8 +47,10 @@ provider.add_span_processor(processor)
 trace.set_tracer_provider(provider)
 tracer = trace.get_tracer(__name__)
 ```
+
+<h4>Below is the code to initialize automatic instrumentation with Flask</h4>
+
 ```sh
-#Below is the code to initialize automatic instrumentation with Flask
 app = Flask(__name__)
 FlaskInstrumentor().instrument_app(app)
 RequestsInstrumentor().instrument()
