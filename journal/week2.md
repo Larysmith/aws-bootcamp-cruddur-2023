@@ -39,6 +39,7 @@ from opentelemetry.sdk.trace.export import BatchSpanProcessor
 ```
 
 <h3>Below is the code to initialize tracing and an exporter that can send data to Honeycomb</h3>
+
 ```sh
 provider = TracerProvider()
 processor = BatchSpanProcessor(OTLPSpanExporter())
@@ -47,7 +48,6 @@ trace.set_tracer_provider(provider)
 tracer = trace.get_tracer(__name__)
 ```
 ```sh
-
 #Below is the code to initialize automatic instrumentation with Flask
 app = Flask(__name__)
 FlaskInstrumentor().instrument_app(app)
