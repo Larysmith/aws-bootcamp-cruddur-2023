@@ -28,7 +28,7 @@ opentelemetry-instrumentation-requests
 ```sh
 pip install -r requirements.txt
 ```
-Step3: Add to the app.py
+**Step3: Add to the app.py**
 ```sh
 from opentelemetry import trace
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
@@ -55,7 +55,7 @@ app = Flask(__name__)
 FlaskInstrumentor().instrument_app(app)
 RequestsInstrumentor().instrument()
 ```
-Step4: Add the following Environment Variables to backend-flask in docker compose
+**Step4: Add the following Environment Variables to backend-flask in docker compose**
 ```sh
 OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
 OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_API_KEY}"
@@ -68,7 +68,7 @@ export HONEYCOMB_SERVICE_NAME="backend-flask"
 gp env HONEYCOMB_API_KEY=""
 gp env HONEYCOMB_SERVICE_NAME="backend-flask"
 ```
-Step5: Verify
+**Step5: Verify**
 ![img](../_docs/assets/imgwk3/honeycomb.png)
 
 ### 2. I RAN QUERIES TO EXPLORE TRACES WITHIN HONEYCOMB.IO
@@ -77,17 +77,17 @@ App.now query
 
 
 ### 3. I INSTRUMENTED AWS X-RAY INTO MY BACKEND FLASK APPLICATION
-Step1: Add to the requirements.txt
+**Step1: Add to the requirements.txt**
 ```sh
 aws-xray-sdk
 ```
 
-Step2: Install the dependecies
+**Step2: Install the dependecies**
 ```sh
 pip install -r requirements.txt
 ```
 
-Step3: Add the following to the app.py file
+**Step3: Add the following to the app.py file**
 ```sh
 from aws_xray_sdk.core import xray_recorder
 from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
@@ -97,8 +97,7 @@ xray_recorder.configure(service='Cruddur', dynamic_naming=xray_url)
 XRayMiddleware(app, xray_recorder)
 
 ```
-
-Step4: Add aws/json/xray.json
+**Step4: Add aws/json/xray.json**
 ```sh
 {
   "SamplingRule": {
@@ -116,7 +115,7 @@ Step4: Add aws/json/xray.json
   }
 }
 ```
-Step5: Run the following commands to creare an xray logging group
+**Step5: Run the following commands to creare an xray logging group**
 ```sh
 FLASK_ADDRESS="https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
 aws xray create-group \
@@ -125,7 +124,7 @@ aws xray create-group \
 ```
 ![img](../_docs/assets/imgwk3/x-raytracesgroup.png)
 
-Step6: Create a sampling rule
+**Step6: Create a sampling rule**
 ```sh
 aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
 ```
@@ -133,7 +132,7 @@ aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
 
 ### 4. I CONFIGURED AND PROVISION X-RAY DAEMON WITHIN DOCKER-COMPOSE AND I SENT DATA BACK TO X-RAY API
 
-Step1: Add daemon service to the docker compose 
+**Step1: Add daemon service to the docker compose **
 ```sh
   xray-daemon:
     image: "amazon/aws-xray-daemon"
@@ -148,7 +147,7 @@ Step1: Add daemon service to the docker compose
 
 ```
 
-Step2: Add these two env vars to our backend-flask in our docker-compose.yml file
+**Step2: Add these two env vars to our backend-flask in our docker-compose.yml file**
 
 ```sh
       AWS_XRAY_URL: "*4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}*"
@@ -159,30 +158,30 @@ Step2: Add these two env vars to our backend-flask in our docker-compose.yml fil
 ![img](../_docs/assets/imgwk3/xraytraces.png)
 
 ### 6. I INTEGRATED ROLLBAR FOR ERROR LOGGING
-Step1: Add to requirements.txt
+**Step1: Add to requirements.txt**
 ```sh
 blinker
 rollbar
 
 ```
 
-Step2: Install dependencies
+**Step2: Install dependencies**
 ```sh
 pip install -r requirements.txt
 ```
 
-Step3: Set access token
+**Step3: Set access token**
 ```sh
 export ROLLBAR_ACCESS_TOKEN=""
 gp env ROLLBAR_ACCESS_TOKEN=""
 ```
 
-Step4: Add to backend-flask for docker-compose.yml
+**Step4: Add to backend-flask for docker-compose.yml**
 ```sh
 ROLLBAR_ACCESS_TOKEN: "${ROLLBAR_ACCESS_TOKEN}"
 ```
 
-Step5: Import for Rollbar
+**Step5: Import for Rollbar**
 ```sh
 import rollbar
 import rollbar.contrib.flask
@@ -208,7 +207,7 @@ def init_rollbar():
     got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
 ```
 
-Step6: We'll add an endpoint just for testing rollbar to app.py
+**Step6: We'll add an endpoint just for testing rollbar to app.py**
 ```sh
 @app.route('/rollbar/test')
 def rollbar_test():
@@ -218,7 +217,7 @@ def rollbar_test():
 ```
 ![img](../img2/rollbar%20web%20.png)
 
-Step7: Verify
+**Step7: Verify**
 ![img](../img2/roolbar%20app%20confirm.png)
 
 ### 7. I TRIGGERD AN ERROR AND OBSERVED AN ERROR WITH ROLLBAR
@@ -227,16 +226,16 @@ Step7: Verify
 
 ### 8. I INSTALLED WATCHTOWER AND WROTE A CUSTOM LOGGER TO SEND APPLICATION LOG DATA TO CLOUDWATCH LOG GROUP
 
-Step1: Add to the requirements.txt
+**Step1: Add to the requirements.txt**
 ```sh
 watchtower
 ```
-Step2: Install the requirements
+**Step2: Install the requirements**
 ```sh
 pip install -r requirements.txt
 ```
 
-Step3: Add the following to app.py
+**Step3: Add the following to app.py**
 ```sh
 import watchtower
 import logging
@@ -261,19 +260,19 @@ def after_request(response):
     LOGGER.error('%s %s %s %s %s %s', timestamp, request.remote_addr, request.method, request.scheme, request.full_path, response.status)
     return response
 ```
-Step4: We'll log something in an API endpoint
+**Step4: We'll log something in an API endpoint**
 ```sh
 LOGGER.info('Hello Cloudwatch! from  /api/activities/home')
 ```
 
-Step5: Set the env var in your backend-flask for docker-compose.yml
+**Step5: Set the env var in your backend-flask for docker-compose.yml**
 ```sh
       AWS_DEFAULT_REGION: "${AWS_DEFAULT_REGION}"
       AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
       AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
 ```
 
-Step6: Verify
+**Step6: Verify**
 ![img](../_docs/assets/imgwk3/cloudwatchloggroups.png)
 ![img](../_docs/assets/imgwk3/cloudwatchlogs.png)
 
