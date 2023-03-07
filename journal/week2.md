@@ -60,20 +60,20 @@ RequestsInstrumentor().instrument()
 OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
 OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_API_KEY}"
 OTEL_SERVICE_NAME: "${HONEYCOMB_SERVICE_NAME}"
+```
+**Step5: You'll need to grab the API key from your honeycomb account:**
 ```sh
-Step5: You'll need to grab the API key from your honeycomb account:
-
 export HONEYCOMB_API_KEY=""
 export HONEYCOMB_SERVICE_NAME="backend-flask"
 gp env HONEYCOMB_API_KEY=""
 gp env HONEYCOMB_SERVICE_NAME="backend-flask"
 ```
-**Step5: Verify**
+**Step5: Verify from screenshoot below**
 ![img](../_docs/assets/imgwk3/honeycomb.png)
 
 ### 2. I RAN QUERIES TO EXPLORE TRACES WITHIN HONEYCOMB.IO
 App.now query
-![img](../imgwk3/honeycombactivities.png)
+![img](../_docs/assets/imgwk3/honeycombactivities.png)
 
 
 ### 3. I INSTRUMENTED AWS X-RAY INTO MY BACKEND FLASK APPLICATION
@@ -272,8 +272,11 @@ LOGGER.info('Hello Cloudwatch! from  /api/activities/home')
       AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
 ```
 
-**Step6: Verify**
+**Step6: Verify cloudwatch log groups from screenshot below**
 ![img](../_docs/assets/imgwk3/cloudwatchloggroups.png)
+
+
+**Step7: Verify cloudwatch logs from screenshot below**
 ![img](../_docs/assets/imgwk3/cloudwatchlogs.png)
 
 
