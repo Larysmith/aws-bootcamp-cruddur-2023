@@ -15,19 +15,19 @@ export default function ProfileInfo(props) {
     setPopped(!popped)
   }
 
-  const signOut = async () => {
-    console.log('signOut')
-    // [TODO] Authenication
-    Cookies.remove('user.logged_in')
-    //Cookies.remove('user.name')
-    //Cookies.remove('user.username')
-    //Cookies.remove('user.email')
-    //Cookies.remove('user.password')
-    //Cookies.remove('user.confirmation_code')
-    //window.location.href = "/"
- // }
+  // const signOut = async () => {
+  //   console.log('signOut')
+  //   // [TODO] Authenication
+  //   Cookies.remove('user.logged_in')
+  //   //Cookies.remove('user.name')
+  //   //Cookies.remove('user.username')
+  //   //Cookies.remove('user.email')
+  //   //Cookies.remove('user.password')
+  //   //Cookies.remove('user.confirmation_code')
+  //   window.location.href = "/"
+  // }
 
-   const signOut = async () => {
+  const signOut = async () => {
     try {
         await Auth.signOut({ global: true });
         window.location.href = "/"
@@ -35,7 +35,7 @@ export default function ProfileInfo(props) {
         console.log('error signing out: ', error);
     }
   }
-   
+
   const classes = () => {
     let classes = ["profile-info-wrapper"];
     if (popped == true){
