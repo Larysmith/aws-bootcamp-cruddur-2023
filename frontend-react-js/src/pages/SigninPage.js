@@ -89,3 +89,20 @@ export default function SigninPage() {
     </article>
   );
 }
+
+
+// [TODO] Authenication
+// import Cookies from 'js-cookie'
+
+ // const onsubmit = async (event) => {
+  //   event.preventDefault();
+  //   setErrors('')
+  //   console.log('onsubmit')
+  //   if (Cookies.get('user.email') === email && Cookies.get('user.password') === password){
+  //     Cookies.set('user.logged_in', true)
+  //     window.location.href = "/"
+  //   } else {
+  //     setErrors("Email and password is incorrect or account doesn't exist")
+  //   }
+  //   return false
+  // }
