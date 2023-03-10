@@ -14,6 +14,8 @@ from services.messages import *
 from services.create_message import *
 from services.show_activity import *
 
+from lib.cognito_jwt_token import cognito_jwt_token
+
 # Honeycomb instrumentation ...........
 from opentelemetry import trace
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
