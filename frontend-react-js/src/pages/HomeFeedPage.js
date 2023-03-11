@@ -24,6 +24,9 @@ export default function HomeFeedPage() {
     try {
       const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/home`
       const res = await fetch(backend_url, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`
+        },
         method: "GET"
       });
       let resJson = await res.json();
@@ -37,17 +40,7 @@ export default function HomeFeedPage() {
     }
   };
 
- // const checkAuth = async () => {
-  //  console.log('checkAuth')
-    // [TODO] Authenication
-//    if (Cookies.get('user.logged_in')) {
-   //   setUser({
-    //    display_name: Cookies.get('user.name'),
-    //    handle: Cookies.get('user.username')
-  //    })
- //   }
-//  };
- const checkAuth = async () => {
+  const checkAuth = async () => {
     Auth.currentAuthenticatedUser({
       // Optional, By default is false. 
       // If set to true, this call will send a 
