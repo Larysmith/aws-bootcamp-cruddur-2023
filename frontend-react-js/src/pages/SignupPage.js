@@ -4,7 +4,7 @@ import {ReactComponent as Logo} from '../components/svg/logo.svg';
 import { Link } from "react-router-dom";
 
 // [TODO] Authenication
-import Cookies from 'js-cookie'
+import { Auth } from 'aws-amplify';
 
 export default function SignupPage() {
 
@@ -18,9 +18,9 @@ export default function SignupPage() {
   const onsubmit = async (event) => {
     event.preventDefault();
     setErrors('')
-    //console.log('username',username)
-    //console.log('email',email)
-    //console.log('name',name)
+    console.log('username',username)
+    console.log('email',email)
+    console.log('name',name)
     try {
       const { user } = await Auth.signUp({
         username: email,
@@ -42,7 +42,6 @@ export default function SignupPage() {
     }
     return false
   }
-
 
   const name_onchange = (event) => {
     setName(event.target.value);
