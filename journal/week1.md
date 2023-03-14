@@ -24,16 +24,16 @@
        ```sh
            docker run --rm -p 4567:4567 -it -e FRONTEND_URL='*' -e BACKEND_URL='*' backend-flask
        ```
-    ![img](/_docs/assets/img-wk-2/Build%20containers.png)
+    ![img](/_docs/assets/img-wk-1/Build%20containers.png)
 
     * Verify the backend is running on the port in the browser
-    ![img](/_docs/assets/img-wk-2/Docker%20backend%20run.png)
+    ![img](/_docs/assets/img-wk-1/Docker%20backend%20run.png)
 
     * Check the backend image ruuning
     ```sh
         docker images
     ```
-    ![img](/_docs/assets/img-wk-2/docker%20images.png)
+    ![img](/_docs/assets/img-wk-1/docker%20images.png)
 
  2. FRONTEND
     * Add the [Frontend Dockerfile](../frontend-react-js/Dockerfile) in the `./frontend-react-js` directory.
@@ -50,7 +50,7 @@
     ```
     
     * Verify the frontend is running on the port in the browser
-    ![img](/_docs/assets/img-wk-2/sign%20in%20page.png)
+    ![img](/_docs/assets/img-wk-1/sign%20in%20page.png)
 
 3. MULTIPLE CONTAINERS
    * Create a [docker-compose.yml](../docker-compose.yml) at the project root directory
@@ -59,7 +59,7 @@
            docker compose up -d
        ```
    * Verify that the multiple containers are up and running from your browser;
-       ![img](/_docs/assets/img-wk-2/frontend%20homepage.png)
+       ![img](/_docs/assets/img-wk-1/frontend%20homepage.png)
 
 ### 2. **DOCUMENT THE NOTIFICATION ENDPOINT**
 Add an endpoint for the notification tab in the [openapi-3.0.yml](../backend-flask/openapi-3.0.yml) file
@@ -80,7 +80,7 @@ Add an endpoint for the notification tab in the [openapi-3.0.yml](../backend-fla
 
 ```
 
-![img](/_docs/assets/img-wk-2/api%20notifcation%20documentation.png)
+![img](/_docs/assets/img-wk-1/api%20notifcation%20documentation.png)
 
 
 
@@ -115,7 +115,7 @@ Step2 : Create and the following files;
 * [NotificationsFeedPage.js](../frontend-react-js/src/pages/NotificationsFeedPage.js)
 
 Step3 : Verify from the browser
-![img](/_docs/assets/img-wk-2/notification%20frontend.png)
+![img](/_docs/assets/img-wk-1/notification%20frontend.png)
 
 ### 5. **RUN DYNAMODB ON THE LOCAL CONTAINER AND ENSURE IT WORKS**
 Step1 : Lets integrate the following into our existing docker compose file
@@ -162,13 +162,13 @@ aws dynamodb put-item \
         '{"Artist": {"S": "No One You Know"}, "SongTitle": {"S": "Call Me Today"}, "AlbumTitle": {"S": "Somewhat Famous"}}' \
     --return-consumed-capacity TOTAL  
 ```
-![img](/_docs/assets/img-wk-2/db%20items.png)
+![img](/_docs/assets/img-wk-1/db%20items.png)
 
 Step4 : List Records
 ```sh
 aws dynamodb list-tables --endpoint-url http://localhost:8000
 ```
-![img](/_docs/assets/img-wk-2/db%20tables.png)
+![img](/_docs/assets/img-wk-1/db%20tables.png)
 Step5 : Get Records
 ```
 aws dynamodb scan --table-name cruddur_cruds --query "Items" --endpoint-url http://localhost:8000
@@ -215,7 +215,7 @@ volumes:
 ```
 
 Step4 : Verify that postgres is well integrated
- ![img](/_docs/assets/img-wk-2/postgress%20terminal.png)
+ ![img](/_docs/assets/img-wk-1/postgress%20terminal.png)
 ## **HOMEWORK CHALLENGE**
 1. Run the dockerfile CMD as an external script
 2. Push and tag a image to DockerHub

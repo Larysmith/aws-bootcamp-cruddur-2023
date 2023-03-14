@@ -69,11 +69,11 @@ gp env HONEYCOMB_API_KEY=""
 gp env HONEYCOMB_SERVICE_NAME="backend-flask"
 ```
 **Step5: Verify from screenshoot below**
-![img](../_docs/assets/imgwk3/honeycomb.png)
+![img](../_docs/assets/imgwk2/honeycomb.png)
 
 ### 2. I RAN QUERIES TO EXPLORE TRACES WITHIN HONEYCOMB.IO
 App.now query
-![img](../_docs/assets/imgwk3/honeycombactivities.png)
+![img](../_docs/assets/imgwk2/honeycombactivities.png)
 
 
 ### 3. I INSTRUMENTED AWS X-RAY INTO MY BACKEND FLASK APPLICATION
@@ -122,13 +122,13 @@ aws xray create-group \
    --group-name "Cruddur" \
    --filter-expression "service(\"backend-flask\")"
 ```
-![img](../_docs/assets/imgwk3/x-raytracesgroup.png)
+![img](../_docs/assets/imgwk2/x-raytracesgroup.png)
 
 **Step6: Create a sampling rule**
 ```sh
 aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
 ```
-![img](../_docs/assets/imgwk3/x-raysampling.png)
+![img](../_docs/assets/imgwk2/x-raysampling.png)
 
 ### 4. I CONFIGURED AND PROVISION X-RAY DAEMON WITHIN DOCKER-COMPOSE AND I SENT DATA BACK TO X-RAY API
 
@@ -155,7 +155,7 @@ aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
 ```
 
 ### 5. I OBSERVED X-RAY TRACES WITHIN THE AWS CONSOLE
-![img](../_docs/assets/imgwk3/xraytraces.png)
+![img](../_docs/assets/imgwk2/xraytraces.png)
 
 ### 6. I INTEGRATED ROLLBAR FOR ERROR LOGGING
 **Step1: Add to requirements.txt**
@@ -218,11 +218,11 @@ def rollbar_test():
 
 
 **Step7: Verify**
-![img](../_docs/assets/imgwk3/rollbar%20tracing.png)
+![img](../_docs/assets/imgwk2/rollbar%20tracing.png)
 
 ### 7. I TRIGGERD AN ERROR AND OBSERVED AN ERROR WITH ROLLBAR
 
-![img](../_docs/assets/imgwk3/rollbar%20inspect%20traces.png)
+![img](../_docs/assets/imgwk2/rollbar%20inspect%20traces.png)
 
 ### 8. I INSTALLED WATCHTOWER AND WROTE A CUSTOM LOGGER TO SEND APPLICATION LOG DATA TO CLOUDWATCH LOG GROUP
 
@@ -273,10 +273,10 @@ LOGGER.info('Hello Cloudwatch! from  /api/activities/home')
 ```
 
 **Step6: Verify cloudwatch log groups from screenshot below**
-![img](../_docs/assets/imgwk3/cloudwatchloggroups.png)
+![img](../_docs/assets/imgwk2/cloudwatchloggroups.png)
 
 
 **Step7: Verify cloudwatch logs from screenshot below**
-![img](../_docs/assets/imgwk3/cloudwatchlogs.png)
+![img](../_docs/assets/imgwk2/cloudwatchlogs.png)
 
 
