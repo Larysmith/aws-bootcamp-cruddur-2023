@@ -249,8 +249,7 @@ if (cognitoErrors){
 {errors}
 ```
 
-![img](../img3/right%20error.jpg)
-![img](../img3/successful%20login%20.png)
+![img](../_docs/assets/imgwk3/signinPage.png)
 
 ## Signup Page
 
@@ -293,8 +292,8 @@ if (cognitoErrors){
 {errors}
 ```
 
-![img](../img3/successful%20signup.png)
-![img](../img3/email%20confirmed%20.png)
+![img](../_docs/assets/imgwk3/signupPage.png)
+
 
 
 ## Confirmation Page
@@ -331,6 +330,7 @@ const onsubmit = async (event) => {
   return false
 }
 ```
+![img](../_docs/assets/imgwk3/comfirmPage.png)
 
 ## Recovery Page
 
@@ -360,8 +360,8 @@ const onsubmit_confirm_code = async (event) => {
 }
 ```
 
-![img](../img3/recovery%20code%20sent.png)
-![img](../img3/signedin%20confirmed%20.png)
+![img](../_docs/assets/imgwk3/PwdRecoPage.png)
+
 
 ## Authenticating Server Side
 
