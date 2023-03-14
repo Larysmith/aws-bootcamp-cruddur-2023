@@ -112,7 +112,7 @@ XRayMiddleware(app, xray_recorder)
       "HTTPMethod": "*",
       "URLPath": "*",
       "Version": 1
-  }
+  
 }
 ```
 **Step5: Run the following commands to creare an xray logging group**
