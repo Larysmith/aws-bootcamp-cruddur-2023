@@ -10,7 +10,7 @@
 
 Using the AWS Console we'll create a Cognito User Group
 
-![img](../img3/cognito-user-pool.png)
+![img](../_docs/assets/imgwk3/AmazonCognitoUserPool.png)
 
 ### 2. INSTALL AND CONFIGURE AMPLIFY CLIENT-SIDE LIBRARY FOR AMAZON CONGITO
 
