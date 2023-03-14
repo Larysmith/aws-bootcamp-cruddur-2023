@@ -215,14 +215,14 @@ def rollbar_test():
     return "Hello World!"
 
 ```
-![img](../img2/rollbar%20web%20.png)
+![img](../_docs/assets/imgwk3/rollbar%20tracing.png)
 
 **Step7: Verify**
 ![img](../img2/roolbar%20app%20confirm.png)
 
 ### 7. I TRIGGERD AN ERROR AND OBSERVED AN ERROR WITH ROLLBAR
 
-![img](../img/../img2/roolbar%20error.png)
+![img](../_docs/assets/imgwk3/rollbar%20inspect%20traces.png)
 
 ### 8. I INSTALLED WATCHTOWER AND WROTE A CUSTOM LOGGER TO SEND APPLICATION LOG DATA TO CLOUDWATCH LOG GROUP
 
