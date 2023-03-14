@@ -215,10 +215,10 @@ def rollbar_test():
     return "Hello World!"
 
 ```
-![img](../_docs/assets/imgwk3/rollbar%20tracing.png)
+
 
 **Step7: Verify**
-![img](../img2/roolbar%20app%20confirm.png)
+![img](../_docs/assets/imgwk3/rollbar%20tracing.png)
 
 ### 7. I TRIGGERD AN ERROR AND OBSERVED AN ERROR WITH ROLLBAR
 
