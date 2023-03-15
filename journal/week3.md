@@ -43,7 +43,7 @@ Amplify.configure({
 
 ### 3. IMPLEMENT API CALLS TO AMAZON COGINTO FOR CUSTOM LOGIN, SIGNUP, RECOVERY AND FORGOT PASSWORD PAGE
 
-## Conditionally show components based on logged in or logged out
+# Conditionally show components based on logged in or logged out
 
 Inside our `HomeFeedPage.js`
 
@@ -87,7 +87,7 @@ We'll want to pass user to the following components:
 <DesktopSidebar user={user} />
 ```
 
-We'll rewrite `DesktopNavigation.js` so that it it conditionally shows links in the left hand column
+We rewrite `DesktopNavigation.js` so that it it conditionally shows links in the left hand column
 on whether you are logged in or not.
 
 Notice we are passing the user to ProfileInfo
@@ -147,7 +147,7 @@ export default function DesktopNavigation(props) {
 }
 ```
 
-We'll update `ProfileInfo.js`
+We update `ProfileInfo.js`
 
 ```js
 import { Auth } from 'aws-amplify';
@@ -162,7 +162,7 @@ const signOut = async () => {
 }
 ```
 
-We'll rewrite `DesktopSidebar.js` so that it conditionally shows components in case you are logged in or not.
+We rewrite `DesktopSidebar.js` so that it conditionally shows components in case you are logged in or not.
 
 ```js
 import './DesktopSidebar.css';
