@@ -8,7 +8,7 @@
 
 ### 1. PROVISION VIA CLICKOPS A AMAZON COGNITO USER POOL
 
-Using the AWS Console we'll create a Cognito User Group
+Using the AWS Console we create a Cognito User Group
 
 ![img](../_docs/assets/imgwk3/AmazonCognitoUserPool.png)
 
