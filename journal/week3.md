@@ -43,7 +43,7 @@ Amplify.configure({
 
 ### 3. IMPLEMENT API CALLS TO AMAZON COGINTO FOR CUSTOM LOGIN, SIGNUP, RECOVERY AND FORGOT PASSWORD PAGE
 
-# Conditionally show components based on logged in or logged out
+#### Conditionally show components based on logged in or logged out
 
 Inside our `HomeFeedPage.js`
 
