@@ -51,6 +51,21 @@ Remotely connected and added a database
 ```sh
   psql -U postgres -h localhost
 ```
+### Connection URL String
+Connection URL String: a way of providing all of the details to authenticate to DB server
+```sh
+export CONNECTION_URL="postgresql://postgres:password@localhost:5432/cruddur"
+gp env CONNECTION_URL="postgresql://postgres:password@localhost:5432/cruddur"
+
+export PROD_CONNECTION_URL="postgresql://root:***@cruddur-db-instance.cw13efqq4djw.eu-south-1.rds.amazonaws.com:5432/cruddur"
+gp env PROD_CONNECTION_URL="postgresql://postgres::***@cruddur-db-instance.cw13efqq4djw.eu-south-1.rds.amazonaws.com:5432/cruddur"
+```
+- To try the authenticating with local DB
+```sh
+psql $CONNECTION_URL
+# The output (which means you're in).
+cruddur=#
+```
 ![img](../_docs/assets/imgwk4/RemoteRDSinstanceConnection.png)
 
 ### 4. CREATE A SCHEMA SQL FILE BY HAND
