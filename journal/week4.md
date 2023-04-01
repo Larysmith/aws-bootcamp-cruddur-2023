@@ -66,7 +66,45 @@ psql $CONNECTION_URL
 # The output (which means you're in).
 cruddur=#
 ```
+
+### 4. Use Bash Scripts
+- Reason for using Bash Scripts: we will use schema file often, So we will be able to turn down the database, set up the database, load the schema.
+- Created these scripts `db-create`, `db-drop`, `db-schema-load`, `db-connect`, `db-seed`, `db-sessions`, `db-setup`.
+- Give the scipts the required permissions `rwxr--r--`
+```sh
+chmod 744 db-create db-drop db-schema-load db-connect db-seed db-sessions db-setup
+```
+
+#### `db-drop`
+```sh
+#! /usr/bin/bash
+### coloring
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="db-drop"
+printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
+
+NO_DB_CONNECTION_URL=$(sed 's/\/cruddur//g' <<<"$CONNECTION_URL")
+psql $NO_DB_CONNECTION_URL -c "drop database cruddur;"
+```
+- we are using `sed` to replace `/cruddur` with nothing (remove it); -> because we can't drop the database while we're connecting to it.
+- we used a backslash `\` to escape the next forward slash `/`
+
+#### `db-create`
+- To create a database.
+#### `db-schema-load`
+- To load the schema script.
+#### `db-connect`
+- To connect to the database.
+#### `db-seed`
+- To fill the database with some mock data to try some commands on the database.
+#### `db-sessions`
+- To see what connections are open, the postgreSQL extention we use seems to make the connection up and doesn't close them.
+#### `db-setup`
+- To run all of the scripts.
 ![img](../_docs/assets/imgwk4/RemoteRDSinstanceConnection.png)
+
+
 
 ### 4. CREATE A SCHEMA SQL FILE BY HAND
 ```sh
