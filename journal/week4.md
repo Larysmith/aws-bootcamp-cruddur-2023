@@ -69,7 +69,7 @@ psql $CONNECTION_URL
 cruddur=#
 ```
 
-### 4. Use Bash Scripts
+### 4. USE BASH SCRIPTS
 - Reason for using Bash Scripts: we will use schema file often, So we will be able to turn down the database, set up the database, load the schema.
 - Created these scripts `db-create`, `db-drop`, `db-schema-load`, `db-connect`, `db-seed`, `db-sessions`, `db-setup`.
 - Give the scipts the required permissions `rwxr--r--`
@@ -108,7 +108,7 @@ psql $NO_DB_CONNECTION_URL -c "drop database cruddur;"
 
 
 
-### 4. CREATE A SCHEMA SQL FILE BY HAND
+### 5. CREATE A SCHEMA SQL FILE BY HAND
 ```sh
   cd backend-flask
   cd lib
@@ -116,7 +116,7 @@ psql $NO_DB_CONNECTION_URL -c "drop database cruddur;"
   touch schema.sql
 ```
 
-### 5. OPERATE COMMON SQL COMMANDS
+### 6. OPERATE COMMON SQL COMMANDS
 ```sh
   \x on -- expanded display when looking at data
   \q -- Quit PSQL
@@ -136,7 +136,7 @@ psql $NO_DB_CONNECTION_URL -c "drop database cruddur;"
   DELETE FROM table_name WHERE condition; -- Delete data  from a table
 
 ```
-### 6. WORK WITH UUIDS AND PSQL EXTENSIONS
+### 7. WORK WITH UUIDS AND PSQL EXTENSIONS
 Add the following code to the db/schema.sql file
 ```sh 
   CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
