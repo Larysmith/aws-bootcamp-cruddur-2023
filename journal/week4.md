@@ -51,6 +51,8 @@ Remotely connected and added a database
 ```sh
   psql -U postgres -h localhost
 ```
+![img](../_docs/assets/imgwk4/RemoteRDSinstanceConnection.png)
+
 ### Connection URL String
 Connection URL String: a way of providing all of the details to authenticate to DB server
 ```sh
@@ -102,7 +104,7 @@ psql $NO_DB_CONNECTION_URL -c "drop database cruddur;"
 - To see what connections are open, the postgreSQL extention we use seems to make the connection up and doesn't close them.
 #### `db-setup`
 - To run all of the scripts.
-![img](../_docs/assets/imgwk4/RemoteRDSinstanceConnection.png)
+
 
 
 
