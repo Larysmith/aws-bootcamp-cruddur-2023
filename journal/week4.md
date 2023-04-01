@@ -1,5 +1,4 @@
 # Week 4 — Postgres and RDS
-# Week 4 — Postgres and RDS
 # CHECKLIST/TO-DO TASK
 1. Provision an RDS instance ###################
 2. Temporarily stop an RDS instance #############
@@ -39,7 +38,7 @@ aws rds create-db-instance \
   --no-deletion-protection
 
 ```
-![img](../img4/rds provision)
+![img](../_docs/assets/imgwk4/Rds-instanceCreated.png)
 
 ### 2. TEMPORARILY STOP AN RDS INSTANCE
 ![img](../img4/databaseStopped%20.png)
