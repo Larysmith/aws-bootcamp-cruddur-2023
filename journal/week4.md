@@ -91,4 +91,4 @@ Then run the command below to create the extension
 ```sh
   psql cruddur < db/schema.sql -h localhost -U postgres
 ```
-![img](.._docs/assets/imgwk4/UUIDextension.png)
+![img](../_docs/assets/imgwk4/UUIDextension.png)
