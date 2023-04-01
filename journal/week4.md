@@ -41,7 +41,7 @@ aws rds create-db-instance \
 ![img](../_docs/assets/imgwk4/Rds-instanceCreated.png)
 
 ### 2. TEMPORARILY STOP AN RDS INSTANCE
-![img](../img4/databaseStopped%20.png)
+![img](../_docs/assets/imgwk4/stopDBinstance.png)
 
 ### 3. REMOTELY CONNECT TO RDS INSTANCE
 Remotely connected and added a database
@@ -51,7 +51,7 @@ Remotely connected and added a database
 ```sh
   psql -U postgres -h localhost
 ```
-![img](../img4/databaseCreated.png)
+![img](../_docs/assets/imgwk4/createdDBonPostgres.png)
 
 ### 4. CREATE A SCHEMA SQL FILE BY HAND
 ```sh
