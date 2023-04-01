@@ -51,7 +51,7 @@ Remotely connected and added a database
 ```sh
   psql -U postgres -h localhost
 ```
-![img](../_docs/assets/imgwk4/createdDBonPostgres.png)
+![img](../_docs/assets/imgwk4/RemoteRDSinstanceConnection.png)
 
 ### 4. CREATE A SCHEMA SQL FILE BY HAND
 ```sh
