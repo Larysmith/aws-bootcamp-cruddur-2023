@@ -85,3 +85,11 @@ gp env PROD_CONNECTION_URL="postgresql://root:Larydb1#@cruddur-db-instance.cjpqw
           'replies': []
         }
         results.insert(0,extra_crud)
+
+      psql $PROD_CONNECTION_URL
+
+      psql -U postgres -h localhost
+
+      34.78.97.25
+
+      curl ifconfig.me
