@@ -96,3 +96,12 @@ gp env PROD_CONNECTION_URL="postgresql://root:Larydb1#@cruddur-db-instance.cjpqw
      export PROD_CONNECTION_URL=postgresql://root:Larydb1#@cruddur-db-instance.cjpqwudpceov.us-east-1.rds.amazonaws.com:5432/cruddur
 
      PostConfirmation failed with error local variable 'conn' referenced before assignment.
+
+     i unset CONNECTION_URL=postgresql://postgres:password@127.0.0.1:5432/cruddur
+
+     aws rds generate-db-auth-token --hostname cjpqwudpceov.us-east-1.rds.amazonaws.com --port 5432 --username cruddur-db-instance --region us-east-1
+
+
+     cjpqwudpceov.us-east-1.rds.amazonaws.com:5432/?Action=connect&DBUser=cruddur-db-instance&X-Amz-Algorithm=
+     AWS4-HMAC-SHA256&X-Amz-Credential=AKIASZSVBVVNBZREPZH3%2F20230408%2Fus-east-1%2Frds-db%2Faws4_request&X-Amz-Date=
+     20230408T103317Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=a5f63854d5b4fe4710dd8d4e3c5403f4561e8e19a7b3b7714b28a22753a80fb9
