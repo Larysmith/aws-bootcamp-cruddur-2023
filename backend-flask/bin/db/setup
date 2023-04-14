@@ -1,15 +1,23 @@
 #! /usr/bin/bash
--e # stop if it fails at any point
+set -e # stop if it fails if any source fails at any point
 
-#echo "==== db-setup"
 CYAN='\033[1;36m'
 NO_COLOR='\033[0m'
 LABEL="db-setup"
 printf "${CYAN}==== ${LABEL}${NO_COLOR}\n"
 
-bin_path="$(realpath .)/bin"
+bin_path="$(realpath .)/bin/db"
 
-source "$bin_path/db-drop"
-source "$bin_path/db-create"
-source "$bin_path/db-schema-load"
-source "$bin_path/db-seed"
+source "$bin_path/drop"
+echo "##################################################################"
+sleep 2
+source "$bin_path/create"
+echo "##################################################################"
+sleep 2
+source "$bin_path/schema-load"
+echo "##################################################################"
+sleep 2
+source "$bin_path/seed"
+echo "##################################################################"
+sleep 2
+python "$bin_path/update_cognito_user_ids"
