@@ -37,8 +37,8 @@ def get_user_uuids():
     'my_handle':  'your_username',
     'other_handle': 'bayko'
   })
-  my_user    = next((item for item in users if item["handle"] == 'lary'), None)
-  other_user = next((item for item in users if item["handle"] == 'smith'), None)
+  my_user    = next((item for item in users if item["handle"] == 'your_username'), None)
+  other_user = next((item for item in users if item["handle"] == 'bayko'), None)
   results = {
     'my_user': my_user,
     'other_user': other_user
