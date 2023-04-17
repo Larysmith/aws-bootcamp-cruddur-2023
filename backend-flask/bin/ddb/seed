@@ -34,8 +34,8 @@ def get_user_uuids():
         )
   """
   users = db.query_array_json(sql,{
-    'my_handle':  'lary',
-    'other_handle': 'smith'
+    'my_handle':  'your_username',
+    'other_handle': 'bayko'
   })
   my_user    = next((item for item in users if item["handle"] == 'lary'), None)
   other_user = next((item for item in users if item["handle"] == 'smith'), None)
