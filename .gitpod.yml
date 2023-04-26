@@ -42,7 +42,16 @@ tasks:
       curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
       sudo dpkg -i session-manager-plugin.deb
       session-manager-plugin
-          
+      
+  - name: cdk
+    before: |
+      npm install aws-cdk -g
+      cd thumbing-serverless-cdk
+      npm i
+  # install sharp, aws-sdk for s3-client
+  - name: lambdas
+    before: |
+      "$THEIA_WORKSPACE_ROOT/bin/serverless/build"        
 
 
 
