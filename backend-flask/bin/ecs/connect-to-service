@@ -3,7 +3,7 @@
 aws ecs execute-command  \
 --region $AWS_DEFAULT_REGION \
 --cluster cruddur \
---task 6fee44da73024dfca0223e0e94178e50 \
+--task ac6b7915bf784192b06761f477e78c7f \
 --container backend-flask \
 --command "/bin/bash" \
 --interactive
