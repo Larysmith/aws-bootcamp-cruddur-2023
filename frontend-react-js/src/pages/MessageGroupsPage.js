@@ -1,10 +1,11 @@
 import './MessageGroupsPage.css';
 import React from "react";
 
+import {checkAuth, getAccessToken} from '../lib/CheckAuth';
+
 import DesktopNavigation  from '../components/DesktopNavigation';
 import MessageGroupFeed from '../components/MessageGroupFeed';
 
-import checkAuth from '../lib/CheckAuth';
 
 export default function MessageGroupsPage() {
   const [messageGroups, setMessageGroups] = React.useState([]);
@@ -15,6 +16,8 @@ export default function MessageGroupsPage() {
   const loadData = async () => {
     try {
       const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/message_groups`
+      await getAccessToken()
+      const access_token = localStorage.getItem("access_token")
       const res = await fetch(backend_url, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`
@@ -31,6 +34,8 @@ export default function MessageGroupsPage() {
       console.log(err);
     }
   };  
+
+
 
   React.useEffect(()=>{
     //prevents double call

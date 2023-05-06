@@ -1,4 +1,5 @@
 import './App.css';
+import './components/Popup.css';
 
 import HomeFeedPage from './pages/HomeFeedPage';
 import NotificationsFeedPage from './pages/NotificationsFeedPage';
@@ -19,11 +20,11 @@ import {
 import { Amplify } from 'aws-amplify';
 
 Amplify.configure({
-  "AWS_PROJECT_REGION": process.env.REACT_AWS_PROJECT_REGION,
+  "AWS_PROJECT_REGION": process.env.REACT_APP_AWS_PROJECT_REGION,
   "aws_cognito_region": process.env.REACT_APP_AWS_COGNITO_REGION,
   "aws_user_pools_id": process.env.REACT_APP_AWS_USER_POOLS_ID,
   "aws_user_pools_web_client_id": process.env.REACT_APP_CLIENT_ID,
-  "oauth": {},
+  "oauth": {}, // (optional) - Hosted UI configuration
   Auth: {
     // We are not using an Identity Pool
     // identityPoolId: process.env.REACT_APP_IDENTITY_POOL_ID, // REQUIRED - Amazon Cognito Identity Pool ID
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/notifications",
     element: <NotificationsFeedPage />
+  },
+  {
+    path: "/@:handle",
+    element: <UserFeedPage />
   },
   {
     path: "/messages",
