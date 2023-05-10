@@ -10,8 +10,8 @@ docker build \
 --build-arg REACT_APP_BACKEND_URL="https://api.beici-demo.xyz" \
 --build-arg REACT_APP_AWS_PROJECT_REGION="$AWS_DEFAULT_REGION" \
 --build-arg REACT_APP_AWS_COGNITO_REGION="$AWS_DEFAULT_REGION" \
---build-arg REACT_APP_AWS_USER_POOLS_ID="us-east-1_GN7uh5LmT" \
---build-arg REACT_APP_CLIENT_ID="3imco9n5ju2bngsltjdvfvnusl" \
+--build-arg REACT_APP_AWS_USER_POOLS_ID="us-east-1_nF2V2235zT" \
+--build-arg REACT_APP_CLIENT_ID="4q0lrgg64dj3imknhts556iaivl" \
 -t frontend-react-js \
 -f "$FRONTEND_REACT_JS_PATH/Dockerfile.prod" \
 "$FRONTEND_REACT_JS_PATH/."
