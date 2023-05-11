@@ -1,10 +1,10 @@
 import './ActivityItem.css';
 
-import ActivityContent  from '../components/ActivityContent';
-import ActivityActionReply  from '../components/ActivityActionReply';
-import ActivityActionRepost  from '../components/ActivityActionRepost';
-import ActivityActionLike  from '../components/ActivityActionLike';
-import ActivityActionShare  from '../components/ActivityActionShare';
+import ActivityContent from '../components/ActivityContent';
+import ActivityActionReply from '../components/ActivityActionReply';
+import ActivityActionRepost from '../components/ActivityActionRepost';
+import ActivityActionLike from '../components/ActivityActionLike';
+import ActivityActionShare from '../components/ActivityActionShare';
 
 export default function ActivityItem(props) {
 
