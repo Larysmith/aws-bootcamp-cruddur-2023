@@ -1,39 +1,45 @@
-192378154330.dkr.ecr.us-east-1.amazonaws.com/cruddur-python
-
 {
-    "cluster": "cruddur",
-    "launchType": "FARGATE",
-    "desiredCount": 1,
-    "enableECSManagedTags": true,
-    "enableExecuteCommand": true,
-    "loadBalancers": [
-      {
-          "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:192378154330:targetgroup/cruddur-backend-flask-tg/c16228076780cdbe",
-          "containerName": "backend-flask",
-          "containerPort": 4567
-      }
-    ],
-    "networkConfiguration": {
-      "awsvpcConfiguration": {
-        "assignPublicIp": "ENABLED",
-        "securityGroups": [
-          "sg-09e531b7a7dd1c87d",
-          "sg-095532e01eb2b2c58"
+  "cluster": "cruddur",
+  "launchType": "FARGATE",
+  "desiredCount": 1,
+  "enableECSManagedTags": true,
+  "enableExecuteCommand": true,
+  "loadBalancers": [
+    {
+        "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:192378154330:targetgroup/cruddur-frontend-react-js-tg/b7eed992b5842997",
+        "containerName": "frontend-react-js",
+        "containerPort": 3000
+    }
+  ],
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "assignPublicIp": "ENABLED",
+      "securityGroups": [
+        "sg-09e531b7a7dd1c87d",
+        "sg-095532e01eb2b2c58"
         ],
         "subnets": [
-          "subnet-0c318ba1d550b4892",
-          "subnet-0cade558d5b826885",
-          "subnet-0e4380bb08bce8056",
-          "subnet-0067a3b74c6eb9c79", 
-          "subnet-0a2e7ccd60f42bfe3",
-          "subnet-03023583ba9652472"
+        "subnet-0c318ba1d550b4892",
+        "subnet-0cade558d5b826885",
+        "subnet-0e4380bb08bce8056",
+        "subnet-0067a3b74c6eb9c79", 
+        "subnet-0a2e7ccd60f42bfe3",
+        "subnet-03023583ba9652472"
         ]
       }
     },
-    "propagateTags": "SERVICE",
-    "serviceName": "backend-flask",
-    "taskDefinition": "backend-flask"
+  "propagateTags": "SERVICE",
+  "serviceName": "frontend-react-js",
+  "taskDefinition": "frontend-react-js",
+  "serviceConnectConfiguration": {
+    "enabled": true,
+    "namespace": "cruddur",
+    "services": [
+      {
+        "portName": "frontend-react-js",
+        "discoveryName": "frontend-react-js",
+        "clientAliases": [{"port": 3000}]
+      }
+    ]
   }
-
-  3
-  
+}
